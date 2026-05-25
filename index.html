@@ -3,324 +3,595 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Kintsugimind</title>
-    <!-- Google Fonts for Editorial Aesthetic -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <title>Kintsugiminds | Mental Wellness & Counseling</title>
     <style>
         :root {
-            --bg-color: #fcfbf9;
-            --text-main: #1c2321;
-            --text-muted: #5e6563;
-            --accent-gold: #c5a880; /* Kintsugi-inspired gold */
-            --card-bg-1: #f4f1ea;
-            --card-bg-2: #eae6dd;
-            --font-serif: 'Playfair Display', serif;
-            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --gold: #D4AF37;
+            --gold-gradient: linear-gradient(135deg, #DFBA48 0%, #B89225 100%);
+            --navy: #1A2E40;
+            --soft-blue: #EBF1F5;
+            --text-dark: #2A363B;
+            --text-light: #606F7B;
+            --white: #FFFFFF;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-sans);
-            line-height: 1.6;
-            overflow-x: hidden;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.7;
         }
 
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 24px;
-        }
-
-        /* Header Styling */
-        .services-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 60px auto;
-        }
-
-        .services-header h1 {
-            font-family: var(--font-serif);
-            font-size: 3rem;
-            font-weight: 400;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .services-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        /* Primary Features: Individual & Corporate Split */
-        .flagship-services {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            margin-bottom: 80px;
-        }
-
-        @media (min-width: 768px) {
-            .flagship-services {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .service-card-large {
-            border-radius: 12px;
-            padding: 48px;
+        /* --- NAVIGATION --- */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 8%;
             display: flex;
-            flex-direction: column;
             justify-content: space-between;
-            min-height: 450px;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .card-individual { background-color: var(--card-bg-1); }
-        .card-corporate { background-color: var(--card-bg-2); }
-
-        .service-card-large:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.5px;
         }
 
-        .badge {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent-gold);
+        .logo span {
+            color: var(--gold);
+            font-weight: 300;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 30px;
             font-weight: 600;
-            margin-bottom: 24px;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .nav-btn {
+            background: var(--gold-gradient);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* --- HERO SECTION (Creative Split) --- */
+        .hero {
+            display: flex;
+            min-height: 85vh;
+            align-items: center;
+            padding: 0 8%;
+            background: linear-gradient(140deg, #FFFFFF 50%, var(--soft-blue) 50%);
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-badge {
+            background-color: rgba(212, 175, 55, 0.15);
+            color: #9A7B1C;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            position: relative;
             display: inline-block;
         }
 
-        .service-card-large h2 {
-            font-family: var(--font-serif);
-            font-size: 2.2rem;
-            font-weight: 400;
-            margin-bottom: 16px;
-            line-height: 1.2;
-        }
-
-        .service-card-large p {
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            font-size: 1.05rem;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin-bottom: 40px;
-        }
-
-        .feature-list li {
-            position: relative;
-            padding-left: 24px;
-            margin-bottom: 12px;
-            color: var(--text-main);
-            font-size: 0.95rem;
-        }
-
-        .feature-list li::before {
-            content: "—";
+        .hero h1 span::after {
+            content: '';
             position: absolute;
+            bottom: 5px;
             left: 0;
-            color: var(--accent-gold);
+            width: 100%;
+            height: 8px;
+            background: rgba(212, 175, 55, 0.2);
+            z-index: -1;
         }
 
-        /* Secondary Grid: Other Services */
-        .other-services-section {
-            border-top: 1px solid #e5e0d8;
-            padding-top: 60px;
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 35px;
         }
 
-        .other-services-section h2.section-title {
-            font-family: var(--font-serif);
-            font-size: 1.8rem;
-            font-weight: 400;
-            margin-bottom: 40px;
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Creative organic shape */
+            box-shadow: 0 20px 40px rgba(26, 46, 64, 0.15);
+        }
+
+        /* --- THE PHILOSOPHY --- */
+        .philosophy {
+            padding: 100px 8%;
+            background-color: var(--white);
             text-align: center;
         }
 
-        .other-services-grid {
+        .section-title {
+            font-size: 36px;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 50px;
+            display: block;
+        }
+
+        .philosophy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 20px;
+            color: var(--text-dark);
+            font-style: italic;
+            position: relative;
+            padding: 0 40px;
+        }
+
+        /* --- SERVICES (Asymmetrical Cards) --- */
+        .services {
+            padding: 100px 8%;
+            background-color: var(--soft-blue);
+        }
+
+        .services-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        @media (min-width: 768px) {
-            .other-services-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        .service-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
-        .service-card-small {
-            background: #fff;
-            border: 1px solid #eae6dd;
-            border-radius: 8px;
-            padding: 32px;
-            transition: all 0.3s ease;
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--gold-gradient);
         }
 
-        .service-card-small:hover {
-            border-color: var(--accent-gold);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(26, 46, 64, 0.08);
         }
 
-        .service-card-small h3 {
-            font-family: var(--font-serif);
-            font-size: 1.35rem;
-            font-weight: 400;
-            margin-bottom: 12px;
+        .service-number {
+            font-size: 60px;
+            font-weight: 800;
+            color: rgba(212, 175, 55, 0.15);
+            position: absolute;
+            top: 10px;
+            right: 30px;
         }
 
-        .service-card-small p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+        .service-card h3 {
+            color: var(--navy);
+            font-size: 22px;
+            margin-bottom: 20px;
+            margin-top: 10px;
         }
 
-        /* Buttons & Links */
-        .cta-link {
-            display: inline-flex;
+        .service-card ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .service-card ul li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: var(--text-light);
+            display: flex;
             align-items: center;
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            font-size: 0.95rem;
-            margin-top: auto;
-            transition: color 0.3s ease;
         }
 
-        .cta-link span {
-            margin-left: 8px;
-            transition: transform 0.3s ease;
+        .service-card ul li::before {
+            content: '✦';
+            color: var(--gold);
+            margin-right: 10px;
+            font-size: 12px;
         }
 
-        .cta-link:hover {
-            color: var(--accent-gold);
+        /* --- CREATIVE FAQ / INTERACTIVE ACCORDION --- */
+        .faq {
+            padding: 100px 8%;
+            background: var(--white);
         }
 
-        .cta-link:hover span {
-            transform: translateX(4px);
+        .faq-container {
+            max-width: 750px;
+            margin: 0 auto;
         }
 
-        /* Scroll Reveal Animation Styles */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
         }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 20px 0;
+            background: none;
+            border: none;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--navy);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* --- CONTACT & FORM --- */
+        .contact {
+            padding: 100px 8%;
+            background: var(--navy);
+            color: var(--white);
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: #A0AEC0;
+            margin-bottom: 40px;
+            max-width: 400px;
+        }
+
+        .info-block {
+            margin-bottom: 25px;
+        }
+
+        .info-block h4 {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .contact-form {
+            flex: 1.5;
+            min-width: 300px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            background-color: var(--soft-blue);
+            color: var(--text-dark);
+            font-size: 15px;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: 2px solid var(--gold);
+            background-color: var(--white);
+        }
+
+        .submit-btn {
+            background: var(--gold-gradient);
+            color: var(--white);
+            border: none;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #111E2B;
+            color: #718096;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* --- RESPONSIVE DESIGN FOR PHONES --- */
+        @media (max-width: 768px) {
+            header { padding: 15px 5%; }
+            nav a:not(.nav-btn) { display: none; } /* Simplifies mobile layout */
+            .hero { flex-direction: column; text-align: center; padding: 60px 5%; background: var(--white); }
+            .hero h1 { font-size: 34px; }
+            .hero-image img { border-radius: 50px; }
+            .contact { padding: 60px 5%; }
+            .contact-form { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
-    <section class="services-container">
-        <!-- Section Header -->
-        <div class="services-header reveal">
-            <h1>Our Therapeutic Pillars</h1>
-            <p>Tailored mental wellness frameworks designed for personal healing and organizational resilience.</p>
-        </div>
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">Kintsugi<span>minds</span></div>
+        <nav>
+            <a href="#about">Philosophy</a>
+            <a href="#services">Services</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact" class="nav-btn">Book Consultation</a>
+        </nav>
+    </header>
 
-        <!-- Flagship Focus: Individual & Corporate -->
-        <div class="flagship-services">
-            
-            <!-- Individual Counselling -->
-            <div class="service-card-large card-individual reveal">
-                <div>
-                    <span class="badge">Personal Growth</span>
-                    <h2>Individual<br>Counselling</h2>
-                    <p>A safe, confidential space tailored entirely to your personal healing journey. We work together to unpack life's complexities and mend the emotional fractures with resilience.</p>
-                    <ul class="feature-list">
-                        <li>Anxiety, stress, and burnout management</li>
-                        <li>Navigating major life transitions and identity</li>
-                        <li>Trauma-informed, personalized care plans</li>
-                    </ul>
-                </div>
-                <a href="#contact" class="cta-link">Book an Individual Session <span>&rarr;</span></a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Psychological Counseling & Wellness</span>
+            <h1>Honoring vulnerabilities. <span>Building resilience.</span></h1>
+            <p>We partner with corporations, universities, and schools to deliver empathetic counseling framework and dynamic preventative mental health solutions that transform structural stress into collective strength.</p>
+            <a href="#contact" class="submit-btn" style="text-decoration:none; display:inline-block; width:auto; padding: 14px 35px;">Initiate a Program</a>
+        </div>
+        <div class="hero-image">
+            <!-- Elegant placeholder image representing growth, calmness and human connection -->
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Mental Wellness and Support">
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="about" class="philosophy">
+        <span class="section-subtitle">Our Foundational Core</span>
+        <h2 class="section-title">The Kintsugi Philosophy to Mental Health</h2>
+        <div class="philosophy-container">
+            <p>"Kintsugi is the Japanese art of mending broken ceramics with gold alloy. At Kintsugiminds, we don't view emotional stress, academic pressure, or institutional burnout as permanent damage. We look at them as opportunities to repair individuals and cultures—making them remarkably stronger, wiser, and more beautifully adapted than they were before."</p>
+        </div>
+    </section>
+
+    <!-- Detailed Services Section -->
+    <section id="services" class="services">
+        <span class="section-subtitle" style="text-align:center;">Tailored Frameworks</span>
+        <h2 class="section-title" style="text-align:center; margin-bottom: 60px;">Where We Make an Impact</h2>
+        
+        <div class="services-grid">
+            <!-- Card 1: Corporate -->
+            <div class="service-card">
+                <div class="service-number">01</div>
+                <h3>Corporate Ecosystems</h3>
+                <p>Designed to reduce absenteeism, boost emotional intelligence, and build psychologically safe professional work environments.</p>
+                <ul>
+                    <li>Executive & Leadership Mental Coaching</li>
+                    <li>Burnout Prevention & Stress Audits</li>
+                    <li>Custom Employee Assistance Programs (EAP)</li>
+                    <li>Crisis Management Interventions</li>
+                </ul>
             </div>
 
-            <!-- Corporate Wellness -->
-            <div class="service-card-large card-corporate reveal">
-                <div>
-                    <span class="badge">Organizations</span>
-                    <h2>Corporate<br>Wellness</h2>
-                    <p>Transform your workplace into an environment where psychological safety and high performance coexist. Custom mental health infrastructure built for modern teams.</p>
-                    <ul class="feature-list">
-                        <li>Leadership alignment and stress mitigation</li>
-                        <li>Interactive mental health workshops & webinars</li>
-                        <li>Employee Assistance Programs (EAP consulting)</li>
-                    </ul>
-                </div>
-                <a href="#contact" class="cta-link">Partner With Us <span>&rarr;</span></a>
+            <!-- Card 2: Colleges -->
+            <div class="service-card">
+                <div class="service-number">02</div>
+                <h3>Colleges & Universities</h3>
+                <p>Supporting young adults navigating massive life transitions, academic pressure, and identity formulation phases.</p>
+                <ul>
+                    <li>On-Campus Confidential Counseling</li>
+                    <li>Performance & Exam Anxiety Frameworks</li>
+                    <li>De-addiction & Identity Workshops</li>
+                    <li>Peer Support Network Setup Support</li>
+                </ul>
             </div>
 
-        </div>
-
-        <!-- Secondary Grid: Other Services -->
-        <div class="other-services-section reveal">
-            <h2 class="section-title">Other Focused Modalities</h2>
-            
-            <div class="other-services-grid">
-                
-                <!-- Other Service 1 -->
-                <div class="service-card-small">
-                    <h3>Couples Therapy</h3>
-                    <p>Rebuild trust, navigate communication barriers, and strengthen relational bonds using evidence-based emotional strategies.</p>
-                </div>
-
-                <!-- Other Service 2 -->
-                <div class="service-card-small">
-                    <h3>Family Support</h3>
-                    <p>Facilitating open dialogue to resolve systemic conflicts, navigate grief, and restore equilibrium to the home environment.</p>
-                </div>
-
-                <!-- Other Service 3 -->
-                <div class="service-card-small">
-                    <h3>Group Workshops</h3>
-                    <p>Community-centered healing circles and structured skill-building sessions focused on collective resilience.</p>
-                </div>
-
+            <!-- Card 3: Schools -->
+            <div class="service-card">
+                <div class="service-number">03</div>
+                <h3>Schools & Early Educators</h3>
+                <p>Proactive emotional regulation coaching built natively for developing minds, proactive teachers, and anxious parents.</p>
+                <ul>
+                    <li>Student Socio-Emotional Screenings</li>
+                    <li>Teacher Mental Health Advocacy Training</li>
+                    <li>Anti-Bullying & Inclusivity Modules</li>
+                    <li>Mindful Parenting Seminar Series</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Scroll Reveal JavaScript -->
-    <script>
-        function revealElements() {
-            const reveals = document.querySelectorAll('.reveal');
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <span class="section-subtitle" style="text-align:center;">Clarifications</span>
+        <h2 class="section-title" style="text-align:center; margin-bottom:50px;">Frequently Asked Questions</h2>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">How are your sessions conducted? <span>+</span></button>
+                <div class="faq-answer">
+                    <p style="padding-bottom:20px;">We offer hyper-flexible frameworks. Programs can be deployed via on-site physical clinical hours at your institution, digital video therapy infrastructure, or large-format experiential auditoriums workshops.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Are the counseling interactions confidential? <span>+</span></button>
+                <div class="faq-answer">
+                    <p style="padding-bottom:20px;">Completely. All individual clinical data, therapy notes, and assessment scores are strictly confidential and fully compliant with global medical ethics practices. Institutions only receive aggregated, anonymous cultural health reports.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Can we request a customized institutional workshop? <span>+</span></button>
+                <div class="faq-answer">
+                    <p style="padding-bottom:20px;">Absolutely. We design specific modules addressing unique stressors (e.g., corporate restructuring, high-stakes university entry testing cycles, parental adjustment pressures).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Lead Form Section -->
+    <section id="contact" class="contact">
+        <div class="contact-info">
+            <h2>Let’s Build Something Unbreakable.</h2>
+            <p>Connect with Kintsugiminds to explore customized institutional retainers, structured keynotes, or ongoing structural wellness deployments.</p>
             
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 100; // Trigger point in px
+            <div class="info-block">
+                <h4>Direct Contact</h4>
+                <p style="color:white; font-size:18px;">consult@kintsugiminds.com</p>
+            </div>
+            
+            <div class="info-block">
+                <h4>Operating Scope</h4>
+                <p>Corporate Headquarters, Educational Campuses, and Remote Digital Frameworks globally.</p>
+            </div>
+        </div>
+
+        <!-- Fully Filled Form Template -->
+        <div class="contact-form">
+            <!-- Using Formspree (a free service) makes this standard form instantly functional -->
+            <form action="https://formspree.io/f/placeholder" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name / Representative</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Official Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="name@organization.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sector">Your Institutional Sector</label>
+                    <select id="sector" name="sector">
+                        <option value="corporate">Corporate / Business Enterprise</option>
+                        <option value="college">University / Higher Education</option>
+                        <option value="school">K-12 School Environment</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Briefly describe your objectives or institutional requirements</label>
+                    <textarea id="message" name="message" rows="4" placeholder="How can Kintsugiminds assist your ecosystem?" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Request Proposal Framework</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Kintsugiminds. Mending minds with gold. All rights reserved.</p>
+    </footer>
+
+    <!-- Interactive Logic for the FAQ accordion functionality -->
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const symbol = question.querySelector('span');
                 
-                if (elementTop < windowHeight - elementVisible) {
-                    element.add('active');
-                    // Once visible, add active class
-                    element.classList.add('active');
+                if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
+                    answer.style.maxHeight = '0px';
+                    symbol.textContent = '+';
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    symbol.textContent = '−';
                 }
             });
-        }
-
-        // Run on scroll
-        window.addEventListener('scroll', revealElements);
-        
-        // Initial check on load
-        window.addEventListener('DOMContentLoaded', revealElements);
+        });
     </script>
+
 </body>
 </html>
